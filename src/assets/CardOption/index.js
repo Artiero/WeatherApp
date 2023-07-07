@@ -16,16 +16,17 @@ import './index.css'
 export default function CardOption(e) {
     // console.log("data daily.",e)
     const [image, setImage] = useState("")
+    const cuaca=e.data1.weather[0].main
     useEffect(() => {
-        if (e?.data1?.weather[0]?.main === "Rain" ){
+        if (cuaca === "Rain" ){
             setImage(ImageOption)
-        } else if (e?.data1?.weather[0]?.main === "Clouds") {
+        } else if (cuaca === "Clouds") {
             setImage(ImageOption2)
-        } else if (e?.data1?.weather[0]?.main === "Thunderstorm") {
+        } else if (cuaca === "Thunderstorm") {
             setImage(ImageOption3)
-        } else if (e?.data1?.weather[0]?.main === "Snow") {
+        } else if (cuaca === "Snow") {
             setImage(ImageOption4)
-        } else if (e?.data1?.weather[0]?.main === "Clear") {
+        } else if (cuaca === "Clear") {
             setImage(ImageOption5)
         }
     }, [])
