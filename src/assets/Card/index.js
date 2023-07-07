@@ -51,7 +51,7 @@ export default function CardWeather({data}) {
         <Col lg={{ offset: 0, size: 6}} style={{padding:'0px', margin:'0px'}} >
           <img src={ImageCuaca} alt="" style={{paddingTop:'40px'}}/>
           <p style={{fontSize:'32px', fontWeight:'500', color:'#EBE2CD', margin:'0px',paddingTop:'10px',paddingLeft:'5px', textTransform:'capitalize'}}>
-            {data.weather[0].description}</p>
+            {data.weather[0].main}</p>
         </Col>
       </Row>
 
