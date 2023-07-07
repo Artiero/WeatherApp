@@ -20,13 +20,13 @@ export default function CardOption({data1}) {
     
     useEffect(() => {
         if (cuaca === "Rain" ){
-            setImage(ImageOption)
+            setImage(ImageOption4)
         } else if (cuaca === "Clouds") {
             setImage(ImageOption2)
         } else if (cuaca === "Thunderstorm") {
-            setImage(ImageOption3)
+            setImage(ImageOption)
         } else if (cuaca === "Snow") {
-            setImage(ImageOption4)
+            setImage(ImageOption3)
         } else if (cuaca === "Clear") {
             setImage(ImageOption5)
         }
