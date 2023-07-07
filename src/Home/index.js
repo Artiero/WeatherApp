@@ -87,7 +87,7 @@ return (
                 {daily.length !== 0 && daily.filter((f,key) => key < 5).map((e,index) => {
                     return (<Col key={index} className='DataDaily' lg='4'>
                     <h1 style={{fontFamily:'Roboto', fontSize:'20px', fontWeight:'700px'}}>{TheDay(e.dt)} {e.dt_txt}</h1>
-                    <CardOption data1={e} /> {console.log('data e',e)}
+                    <CardOption data1={e} />
                 </Col>)
                 })}
             </Row>

@@ -13,10 +13,11 @@ import humidity from '../image/humidity.png'
 import Wind from '../image/Wind.png'
 import './index.css'
 
-export default function CardOption(e) {
-    // console.log("data daily.",e)
+export default function CardOption({data1}) {
+    // console.log("data daily.",data1)
     const [image, setImage] = useState("")
-    const cuaca=e.data1.weather[0].main
+    let cuaca = data1.weather[0].main
+    
     useEffect(() => {
         if (cuaca === "Rain" ){
             setImage(ImageOption)
@@ -29,7 +30,7 @@ export default function CardOption(e) {
         } else if (cuaca === "Clear") {
             setImage(ImageOption5)
         }
-    }, [])
+    }, [cuaca])
 
   return (
     <>
@@ -44,14 +45,14 @@ export default function CardOption(e) {
                     <Col
                     style={{padding:'0px'}} >
                         <img src={image} alt="" style={{paddingTop:'40px', paddingLeft:'30px'}}/>
-                        <p style={{fontSize:'32px', fontWeight:'500', color:'#EBE2CD', margin:'0px',paddingTop:'10px',paddingLeft:'30px'}}>{e.data1.weather[0].main}</p>
+                        <p style={{fontSize:'32px', fontWeight:'500', color:'#EBE2CD', margin:'0px',paddingTop:'10px',paddingLeft:'30px'}}>{data1.weather[0].main}</p>
                     </Col>
                     <Col
                     style={{paddingLeft:'20px', margin:'0px'}} >
                     <div className='contens' style={{ paddingTop:'40px'}}>
-                        <p style={{fontSize:'32px', fontWeight:'300', margin:"0px", paddingBottom:'5px'}}>{e.data1.main.pressure} <img className='rain' src={rain} alt=""/></p>
-                        <p style={{fontSize:'32px', fontWeight:'300', margin:"0px", paddingBottom:'5px'}}>{e.data1.main.humidity} <img className='humidity' src={humidity} alt=""/> </p>
-                        <p style={{fontSize:'32px', fontWeight:'300', margin:"0px", paddingBottom:'15px'}}>{e.data1.wind.speed} <img className='Wind' src={Wind} alt=""/> </p>
+                        <p style={{fontSize:'32px', fontWeight:'300', margin:"0px", paddingBottom:'5px'}}>{data1.main.pressure} <img className='rain' src={rain} alt=""/></p>
+                        <p style={{fontSize:'32px', fontWeight:'300', margin:"0px", paddingBottom:'5px'}}>{data1.main.humidity} <img className='humidity' src={humidity} alt=""/> </p>
+                        <p style={{fontSize:'32px', fontWeight:'300', margin:"0px", paddingBottom:'15px'}}>{data1.wind.speed} <img className='Wind' src={Wind} alt=""/> </p>
                     </div>
                     </Col>
                 </Row>
