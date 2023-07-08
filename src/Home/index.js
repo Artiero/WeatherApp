@@ -48,14 +48,13 @@ export default function Home() {
 }, [])
 
     const TheDay = (a) => {
-        const time = (a)
-        const date = new Date(time * 1000);
-        const day = date.getDay();
-        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-        const dayName = daysOfWeek[day]
+    const tanggal_waktu = new Date(a);
+    const nama_hari = tanggal_waktu.toLocaleDateString('en-US', { weekday: 'long' });
 
-        return dayName;
+        return nama_hari;
     }
+
+    
     
 
     // console.log("ini daily",daily)
@@ -86,7 +85,7 @@ return (
             <Row>
                 {daily.length !== 0 && daily.filter((f,key) => key < 5).map((e,index) => {
                     return (<Col key={index} className='DataDaily' lg='4'>
-                    <h1 style={{fontFamily:'Roboto', fontSize:'20px', fontWeight:'700px'}}>{TheDay(e.dt)} {e.dt_txt}</h1>
+                    <h1 style={{fontFamily:'Roboto', fontSize:'20px', fontWeight:'700px'}}>{TheDay(e.dt_txt)} {e.dt_txt}</h1>
                     <CardOption data1={e} />
                 </Col>)
                 })}
